@@ -76,4 +76,15 @@ It is necessary to deal with features to help produce models with better perform
 - Label encoding and one-hot encoding for categorical features.
 
 # Modeling
+We choose precision as our target metric for our models since we want to limit false positives which include people who are predicted as target customers who will subscribe but actually are not, and we choose three robut machine learning models to solve this problem: Logistic Regression, Random Forest and XGBoosting.
 
+I chose 4/3-1/4 as my train-test split for models. 
+
+As we mentioned earlier, we have an imbalanced dataset. So I decide to use SMOTE to use the nearest neighbors of the minority observations to create new synthetic and balanced data.
+
+The results of the classification models, all of which used hyperparameter grid search, are shown below:
+| Model       | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |m
