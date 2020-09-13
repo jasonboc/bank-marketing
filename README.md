@@ -14,11 +14,66 @@ This dataset is about the direct phone call marketing campaigns, which aim to pr
 
 # Preprocessing
 - Generally speaking, the dataset is in good condition with no missing values and duplicates and with mix of categorical and numerical variables.
+- By inspecting the target variable, I understand that this is an imbalanced dataset.
+   <img src="images/imb.png" >
+   
 - According to what the data description shows, outliers in one of the core columns 'balance' have been detected and been removed based on IQR rule.
 - For easy understanding, yes/no in the target column has been converted into 1/0 and -1 in the pdays has been converted into 0, which means the client has not been contacted.
 
 # Explanatory Data Analysis
 In this part, we are going to investigate the distribution of each variable and how they get correlated with each other. Visualizations are shown below to reveal key insights.
+
+##  Distributions for each numerical feature
 <img src="images/dist1.png" >
 <img src="images/dist2.png" >
+
+Insights:
+- The distribution of customer age is quite extensive, from 18 to 95. However, most of them are in the mid-age(30s-40s).
+- The balance distribution is also wide spread, suggesting a large variability in customer balances.
+- The duration of contact has a median about 300 seconds and most of them are very short, but there are still a number of large outliers which worth being investigated.
+- Half of the clients were contacted by the bank for the second time and most of them are contacted by one to three times. However, some clients are contacted by 58 times at most, which is abnormal. It may be because these clients have special needs from the bank.
+- Most clients are contacted recently or never been contacted and only a few has been contacted a few years ago.
+- Most clients hasn't been contacted before this compaign and only a few get contacted many times.
+- Furthermore, the age is little bit skewed which could potentially bias our model later on. In a subsequent step, we will apply log transformation at least on the age feature.
+
+## Correlation between numerical features
+<img src="images/heat.png" width=800 >
+
+The cross-correlation revealed relatively strong relationship between our target feature and the last contact duration. There is also a mild correlation between subscription and pdays, balance or previous. The correlation is similar which is close to 0.1. Now, we would need to keep these relationship in mind since there seems to be some collinearity between the explanatory features as well(e.g. previous vs pdays, day vs campaign).
+
+## Plots Regarding Target Feature
+<img src="images/violin1.png"  >
+<img src="images/violin2.png"  >
+<img src="images/dist3.png"  >
+<img src="images/dist4.png"  >
+
+Insights:
+- Older and younger people are more likely to subscribe the term deposit. It makes sense since term deposit is the least risky investment which is suitable for these two groups of people.
+- Clients with average or high balance are more likely to subscribe. In the future, the bank should focus more on these group of people.
+- Longer contact duration is more likely to lead to a campaign success.
+- People who have a contact period of about 150 days from contact by previous campaign are more likely to subscribe.
+- There is no significant difference of subscription on last contact day of the month and number of contacts performed during and before this campaign.
+
+## Barplots of Categorical Features with respect to Target Variable
+Calculate probability of subscription based on the category and draw the barplot for each category.
+<img src="images/bar1.png"  >
+<img src="images/bar2.png"  >
+
+Insights:
+- Students and retirees are the major customers for the deposit description, which aligns with the previous finding about age.
+- People with higher education tends to be more likely to subscribe.
+- People who don't have credit in default or who don't have housing or personal loan should be targeted customers.
+- The success of marketing campaign is largely affected by the effect of previous campaign.
+- The marketing campaign is recommended to initiate during fall or spring as these two seasons seem to yield a better result.
+- The contact method doesn't affect too much about client's choice of subscription.
+
+# Feature Engineering
+It is necessary to deal with features to help produce models with better performance, what I do in this part is:
+- Removing unnecessary features based on EDA. ('contact','day','campaign','previous' are removed)
+- Log-Transform the skewed column 'age'.
+- Standarization of numerical features to help fit in the logistic regression.
+- Drop 'unknown' and 'other' values.
+- Label encoding and one-hot encoding for categorical features.
+
+# Modeling
 
