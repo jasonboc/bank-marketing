@@ -18,4 +18,7 @@ This dataset is about the direct phone call marketing campaigns, which aim to pr
 - For easy understanding, yes/no in the target column has been converted into 1/0 and -1 in the pdays has been converted into 0, which means the client has not been contacted.
 
 # Explanatory Data Analysis
-<img src="images/dist1.jpg" >
+In this part, we are going to investigate the distribution of each variable and how they get correlated with each other. Visualizations are shown below to reveal key insights.
+<img src="images/dist1.png" >
+<img src="images/dist2.png" >
+
