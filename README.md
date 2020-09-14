@@ -76,15 +76,39 @@ It is necessary to deal with features to help produce models with better perform
 - Label encoding and one-hot encoding for categorical features.
 
 # Modeling
-We choose precision as our target metric for our models since we want to limit false positives which include people who are predicted as target customers who will subscribe but actually are not, and we choose three robut machine learning models to solve this problem: Logistic Regression, Random Forest and XGBoosting.
-
-I chose 4/3-1/4 as my train-test split for models. 
-
-As we mentioned earlier, we have an imbalanced dataset. So I decide to use SMOTE to use the nearest neighbors of the minority observations to create new synthetic and balanced data.
+- I choose precision as our target metric for our models since we want to limit false positives which include people who are predicted as target customers who will subscribe but actually are not, and we choose three robut machine learning models to solve this problem: Logistic Regression, Random Forest and XGBoosting.
+- I chose 4/3-1/4 as my train-test split for models. 
+- As we mentioned earlier, we have an imbalanced dataset. So I decide to use SMOTE to use the nearest neighbors of the minority observations to create new synthetic and balanced data.
+- all models are created and hyperparameter tuning has been done through gridSearchCV forall models.
+- Test each model by 5-fold corss-valiadation and return the metric precision for each model.
 
 The results of the classification models, all of which used hyperparameter grid search, are shown below:
-| Model       | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |m
+| Model             | precision through CV on trian set | precision on the test set|
+| ----------------- |:-------------:| ------:|
+| Logistic Regression  | 89.46%| 68.72%|
+| Random Forest | 88.26% | 63.86%|
+| XGBoost|89.11%|68.28%|
+
+ROC graph:
+
+<img src="images/roc.png"  >
+
+As we can see, logistic regression is the most successful model which effectively limit false positives.
+
+# Feature Importance
+<img src="images/fi.png"  >
+
+# Final Recommendations
+## Target Customer:
+- Age: Young and old people (typically age<30 and age>60)
+- Balance: People with relatively high balance (typically balance>1000)
+- loan: People who do not have housing or private loans.
+- Outcome from last campaign: People who indicate a successful outcome of the previous marketing campaign.
+- Old customers: People who was previously get contacted before. 
+
+## Seasonal Marketing
+Marketing timing is an very essential for businesses. As we observe from EDA and feature importance, marketing seasons make a difference in results. It appears that spring and autumn marketing campaigns are the most successful. The bank should consider initiating its telemarketing campaign in fall and spring.
+
+## Strategy Marketing 
+Marketing strategy is also key factor of success. Here is a tip to improve possibility of campaign success: Try best to make the campaign engaging, so the customer is willing to participate in a long duration. Longer contact duration potentially indicates a success.
+<img src="images/mkt.jpg"  >
