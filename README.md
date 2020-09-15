@@ -93,7 +93,7 @@ ROC graph:
 
 <img src="images/roc.png"  >
 
-As we can see, logistic regression is the most successful model which effectively limit false positives.
+As we can see, random forest is the most successful model which effectively limit false positives.
 
 # Feature Importance
 <img src="images/fi.png"  >
