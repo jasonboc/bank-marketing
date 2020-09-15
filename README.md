@@ -15,7 +15,7 @@ This dataset is about the direct phone call marketing campaigns, which aim to pr
 # Preprocessing
 - Generally speaking, the dataset is in good condition with no missing values and duplicates and with mix of categorical and numerical variables.
 - By inspecting the target variable, I understand that this is an imbalanced dataset.
-   <img src="images/imb.png" >
+   <img src="images/imb.png" > 
    
 - According to what the data description shows, outliers in one of the core columns 'balance' have been detected and been removed based on IQR rule.
 - For easy understanding, yes/no in the target column has been converted into 1/0 and -1 in the pdays has been converted into 0, which means the client has not been contacted.
