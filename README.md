@@ -78,6 +78,7 @@ It is necessary to deal with features to help produce models with better perform
 # Modeling
 - I choose precision as our target metric for our models since we want to limit false positives which include people who are predicted as target customers who will subscribe but actually are not, and we choose three robut machine learning models to solve this problem: Logistic Regression, Random Forest and XGBoosting.
 - I chose 4/3-1/4 as my train-test split for models. 
+- We predict all zeroes in our test set as our base model, with the precision of 0%.
 - As we mentioned earlier, we have an imbalanced dataset. So I decide to use SMOTE to use the nearest neighbors of the minority observations to create new synthetic and balanced data.
 - all models are created and hyperparameter tuning has been done through gridSearchCV forall models.
 - Test each model by 5-fold corss-valiadation and return the metric precision for each model.
