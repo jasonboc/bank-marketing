@@ -34,7 +34,7 @@ Insights:
 - Half of the clients were contacted by the bank for the second time and most of them are contacted by one to three times. However, some clients are contacted by 58 times at most, which is abnormal. It may be because these clients have special needs from the bank.
 - Most clients are contacted recently or never been contacted and only a few has been contacted a few years ago.
 - Most clients hasn't been contacted before this compaign and only a few get contacted many times.
-- Furthermore, the age is little bit skewed which could potentially bias our model later on. In a subsequent step, we will apply log transformation at least on the age feature.
+- Furthermore,  age,balance,pdays and previous are a little bit skewed which could potentially bias our model later on. In a subsequent step, we will apply log transformation on these features.
 
 ## Correlation between numerical features
 <img src="images/heat.png" width=800 >
@@ -69,8 +69,8 @@ Insights:
 
 # Feature Engineering
 It is necessary to deal with features to help produce models with better performance, what I do in this part is:
-- Removing unnecessary features based on EDA. ('contact','day','campaign','previous' are removed)
-- Log-Transform the skewed column 'age'.
+- Removing unnecessary features based on EDA. ('contact','day','campaign' are removed)
+- Log-Transform the skewed column 'age','duration','pdays' and 'previous.
 - Standarization of numerical features to help fit in the logistic regression.
 - Drop 'unknown' and 'other' values.
 - Label encoding and one-hot encoding for categorical features.
@@ -85,15 +85,15 @@ It is necessary to deal with features to help produce models with better perform
 The results of the classification models, all of which used hyperparameter grid search, are shown below:
 | Model             | precision through CV on trian set | precision on the test set|
 | ----------------- |:-------------:| ------:|
-| Logistic Regression  | 89.46%| 68.72%|
-| Random Forest | 88.26% | 63.86%|
-| XGBoost|89.11%|68.28%|
+| Logistic Regression  | 86.37%| 60.96%|
+| Random Forest | 87.87% | 65.11%|
+| XGBoost|88.60%|64.93%|
 
 ROC graph:
 
 <img src="images/roc.png"  >
 
-As we can see, random forest is the most successful model which effectively limit false positives.
+As we can see, the three models behave in a similar performance. Random forest is the most successful model which effectively limit false positives in the test set.
 
 # Feature Importance
 <img src="images/fi.png"  >
