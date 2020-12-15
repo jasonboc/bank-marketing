@@ -20,7 +20,7 @@ This dataset is about the direct phone call marketing campaigns, which aim to pr
 - According to what the data description shows, outliers in one of the core columns 'balance' have been detected and been removed based on IQR rule.
 - For easy understanding, yes/no in the target column has been converted into 1/0 and -1 in the pdays has been converted into 0, which means the client has not been contacted.
 
-# Explanatory Data Analysis
+# Exploratory Data Analysis
 In this part, we are going to investigate the distribution of each variable and how they get correlated with each other. Visualizations are shown below to reveal key insights.
 
 ##  Distributions for each numerical feature
