@@ -7,7 +7,7 @@ Nowadays, marketing is so essential for every business to promote their brand im
 # Problem Statement and Goal
 How can the bank have a greater effectiveness for future marketing campaigns? In order to answer this, we have to analyze the last marketing campaign the bank performed and identify the patterns that will help us find conclusions in order to develop future strategies. 
 
-Our goal is to find the best strategies to improve for the next marketing campaign to better target customers who are more likely to subscribe term deposits. The bank can then put more effort into marketing these customers. This will not only help the bank get more deposits but also save unncessary marketing expenses on those people who will not subscribe.
+Our goal is to find the best strategies to improve for the next marketing campaign to better target customers who are more likely to subscribe term deposits. The bank can then put more effort into marketing these customers. This will not only help the bank get more deposits but also save unnecessary marketing expenses on those people who will not subscribe.
 
 # Data Collection
 This dataset is about the direct phone call marketing campaigns, which aim to promote term deposits among existing customers, by a Portuguese banking institution from May 2008 to November 2010. It is publicly available in the [UCI Machine learning Repository.](http://archive.ics.uci.edu/ml/datasets/Bank+Marketing#)
