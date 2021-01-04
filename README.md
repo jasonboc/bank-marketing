@@ -101,6 +101,7 @@ As we can see, the three models behave in a similar performance. Random forest i
 
 # Next Steps
 Now we can use our model to develop a new marketing strategy. Then the new email campaign strategy will be: only send email to users which my random forest model predicts positive.
+
 according to its predictive result on test set:
 - my model only need to do 26% of the old call amount, saving 74% amount.
 - my model will cover 70% of valued users which will subscribe the deposit.
