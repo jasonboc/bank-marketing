@@ -99,6 +99,13 @@ As we can see, the three models behave in a similar performance. Random forest i
 # Feature Importance
 <img src="images/fi.png"  >
 
+# Next Steps
+Now we can use our model to develop a new marketing strategy. Then the new email campaign strategy will be: only send email to users which my GBM model predicts positive.
+according to its predictive result on test set:
+- my model only need to do 26% of the old call amount, saving 74% amount.
+- my model will cover 70% of valued users which will subscribe the deposit.
+- 65.11% of the receiver will subscribe. compare with old strategy, whose subscription rate is 11.7% , my new strategy can be almost six times the subscription rate.
+
 # Final Recommendations
 ## Target Customer:
 - Age: Young and old people (typically age<30 and age>60)
