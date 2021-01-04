@@ -107,6 +107,8 @@ according to its predictive result on test set:
 - my model will cover 70% of valued users which will subscribe the deposit.
 - 65.11% of the receiver will subscribe. compare with old strategy, whose subscription rate is 11.7% , my new strategy can be almost six times the subscription rate.
 
+If it is a real-life case, we can conduct a A/B test to check if the new strategy works.
+
 # Final Recommendations
 ## Target Customer:
 - Age: Young and old people (typically age<30 and age>60)
